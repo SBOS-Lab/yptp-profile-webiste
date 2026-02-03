@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - YPTP Papua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <nav class="fixed top-0 w-full z-50 py-4 px-4 md:px-12 pointer-events-none">
+        <div class="max-w-7xl mx-auto glass-card rounded-2xl shadow-xl px-6 py-3 flex justify-between items-center pointer-events-auto">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-green-600 to-yellow-400 rounded-lg flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-hands-holding-child text-xl"></i>
+                </div>
+                <div class="leading-tight">
+                    <span class="block font-poppins font-bold text-green-800 text-sm md:text-base tracking-tight">YPTP PAPUA</span>
+                    <span class="text-[9px] md:text-[10px] font-bold text-yellow-600 tracking-tighter uppercase">Talenta Papua Tengah</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-green-600 transition">Beranda</a>
+                <a href="tentang.html" class="text-green-600">Tentang</a>
+                <a href="index.html#berita" class="hover:text-green-600 transition">Berita</a>
+                <a href="index.html#program" class="hover:text-green-600 transition">Program</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#donasi" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                    <i class="fas fa-heart"></i> <span class="hidden sm:inline">Donasi</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-green-800 focus:outline-none">
+                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 bg-white shadow-2xl rounded-3xl p-6 pointer-events-auto border border-slate-100 md:hidden">
+            <div class="flex flex-col gap-5 text-center font-poppins font-semibold text-slate-800">
+                <a href="index.html" class="py-2 border-b">Beranda</a>
+                <a href="tentang.html" class="py-2 border-b text-green-600">Tentang Kami</a>
+                <a href="index.html#berita" class="py-2 border-b">Berita</a>
+                <a href="index.html#program" class="py-2">Program</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 md:pt-48 pb-20 px-6 bg-gradient-to-b from-green-50 to-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-green-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Mengenal Lebih Dekat</span>
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-8">
+                Membangun Kemandirian dari <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-yellow-500">Tanah Mimika</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
+                Yayasan Pengembangan Talenta Papua (YPTP) adalah wadah bagi generasi muda Papua Tengah untuk mengasah potensi, keterampilan teknis, dan karakter demi masa depan yang lebih baik.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-100 rounded-full z-0 opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200" alt="Sejarah YPTP" class="relative z-10 rounded-[3rem] shadow-2xl">
+                <div class="absolute -bottom-10 -right-10 bg-green-600 text-white p-8 rounded-[2rem] hidden md:block">
+                    <p class="text-4xl font-bold italic">10+</p>
+                    <p class="text-xs uppercase tracking-widest font-bold">Tahun Mengabdi</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Cerita Perjalanan Kami</h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed font-light">
+                    <p>
+                        Berdiri di jantung Kabupaten Mimika, YPTP lahir dari keresahan akan kurangnya akses pelatihan keterampilan bagi putra-putri daerah pasca sekolah formal. Kami percaya bahwa setiap talenta Papua memiliki permata yang hanya perlu diasah.
+                    </p>
+                    <p>
+                        Dimulai dari sebuah bengkel kayu sederhana, kini kami berkembang menjadi pusat pelatihan otomotif, furniture, dan pemberdayaan ekonomi kreatif yang diakui oleh mitra industri nasional.
+                    </p>
+                </div>
+                
+                <div class="mt-10 grid grid-cols-2 gap-6">
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-bold text-slate-900">Visi Utama</h4>
+                        <p class="text-sm text-slate-500 italic">Menciptakan generasi Papua yang mandiri secara ekonomi dan kokoh secara karakter.</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                        <h4 class="font-bold text-slate-900">Misi Kami</h4>
+                        <p class="text-sm text-slate-500 italic">Menyediakan pelatihan praktis yang relevan dengan kebutuhan industri lokal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/3">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-yellow-400 rounded-[3rem] rotate-6 group-hover:rotate-0 transition duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1544168190-79c17527004f?q=80&w=600" alt="Pastor Didymus" class="relative z-10 rounded-[3rem] grayscale hover:grayscale-0 transition duration-500 shadow-2xl">
+                </div>
+            </div>
+            <div class="w-full md:w-2/3">
+                <i class="fas fa-quote-left text-5xl text-yellow-400 mb-6 opacity-50"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 font-poppins">Pesan Pendiri</h2>
+                <p class="text-xl md:text-2xl italic font-light leading-relaxed mb-8 text-slate-300">
+                    "Pemberdayaan bukan hanya soal memberi alat kerja, tapi soal menanamkan keyakinan bahwa anak-anak Papua mampu bersaing dan menjadi tuan di tanahnya sendiri."
+                </p>
+                <div>
+                    <h4 class="text-xl font-bold text-yellow-400">Pastor Didymus Kosi, OFM</h4>
+                    <p class="text-slate-500 uppercase tracking-[0.2em] text-xs font-bold mt-1">Founder & Inisiator YPTP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto bg-green-50 rounded-[4rem] p-12 md:p-20 text-center">
+            <h2 class="text-2xl font-bold text-slate-800 mb-16 italic">Dampak Yang Telah Kita Ciptakan Bersama</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div>
+                    <p class="text-5xl font-bold text-green-600 mb-2">500+</p>
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Lulusan</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold text-green-600 mb-2">12</p>
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Mitra Industri</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold text-green-600 mb-2">4</p>
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Workshop</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold text-green-600 mb-2">95%</p>
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Tingkat Kerja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 px-6 text-center border-t border-white/5">
+        <p class="text-sm text-slate-500">© 2026 Yayasan Pengembangan Talenta Papua. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            }
+        });
+    </script>
+</body>
+</html>

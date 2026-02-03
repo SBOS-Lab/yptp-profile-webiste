@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Berita - YPTP Papua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #475569; }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <nav class="fixed top-0 w-full z-50 py-4 px-4 md:px-12 pointer-events-none">
+        <div class="max-w-7xl mx-auto glass-card rounded-2xl shadow-xl px-6 py-3 flex justify-between items-center pointer-events-auto">
+            
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-green-600 to-yellow-400 rounded-lg flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-hands-holding-child text-xl"></i>
+                </div>
+                <div class="leading-tight">
+                    <span class="block font-poppins font-bold text-green-800 text-sm md:text-base tracking-tight">YPTP PAPUA</span>
+                    <span class="text-[9px] md:text-[10px] font-bold text-yellow-600 tracking-tighter uppercase">Talenta Papua Tengah</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-700">
+                <a href="index.html#tentang" class="hover:text-green-600 transition">Tentang</a>
+                <a href="index.html#berita" class="hover:text-green-600 transition">Berita</a>
+                <a href="index.html#visi" class="hover:text-green-600 transition">Visi Misi</a>
+                <a href="index.html#program" class="hover:text-green-600 transition">Program</a>
+                <a href="index.html#kontak" class="hover:text-green-600 transition">Kontak</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#donasi" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                    <i class="fas fa-heart"></i> <span class="hidden sm:inline">Donasi</span>
+                </a>
+
+                <button id="menu-btn" class="md:hidden text-green-800 focus:outline-none">
+                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl p-6 pointer-events-auto border border-slate-100 md:hidden">
+            <div class="flex flex-col gap-5 text-center font-poppins font-semibold text-slate-800">
+                <a href="index.html#tentang" class="mobile-link py-2 border-b border-slate-50">Tentang Kami</a>
+                <a href="index.html#berita" class="mobile-link py-2 border-b border-slate-50">Berita</a>
+                <a href="index.html#visi" class="mobile-link py-2 border-b border-slate-50">Visi & Misi</a>
+                <a href="index.html#program" class="mobile-link py-2 border-b border-slate-50">Program</a>
+                <a href="index.html#kontak" class="mobile-link py-2 border-b border-slate-50">Kontak</a>
+                <div class="flex justify-center gap-4 pt-2">
+                    <a href="#" class="text-green-600 text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-green-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-green-600 text-xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 md:pt-44 pb-10 px-6 bg-slate-50/50">
+        <div class="max-w-4xl mx-auto">
+            <nav class="flex items-center gap-2 text-[10px] font-bold text-green-600 uppercase tracking-widest mb-6">
+                <a href="index.html" class="hover:underline">Beranda</a>
+                <i class="fas fa-chevron-right text-[8px] text-slate-300"></i>
+                <span class="text-slate-400">Berita & Kegiatan</span>
+            </nav>
+            
+            <h1 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-8">
+                Wisuda Angkatan ke-4 Pelatihan Furniture Timika: Mencetak Generasi Mandiri
+            </h1>
+            
+            <div class="flex flex-wrap items-center gap-6 text-slate-500 text-xs md:text-sm border-b border-slate-200 pb-8">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar-alt text-yellow-500"></i>
+                    <span>12 Februari 2026</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user text-yellow-500"></i>
+                    <span>Oleh: Admin YPTP</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-tag text-yellow-500"></i>
+                    <span>Kategori: Kegiatan</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mb-12">
+                <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" alt="Wisuda YPTP" class="w-full h-auto">
+            </div>
+
+            <div class="prose max-w-none text-slate-600 font-light text-lg leading-relaxed">
+                <p class="font-bold text-slate-800 text-xl mb-8 leading-relaxed italic">
+                    Sebanyak 30 pemuda asli Papua Tengah resmi menyelesaikan pelatihan intensif selama 6 bulan di Workshop YPTP Timika. 
+                </p>
+                
+                <p>
+                    Timika – Yayasan Pengembangan Talenta Papua (YPTP) kembali membuktikan komitmennya dalam memberdayakan pemuda lokal. Pastor Didymus Kosi OFM, selaku pendiri, menyampaikan rasa bangganya atas ketekunan para peserta didik angkatan ke-4 ini. Selama pelatihan, mereka tidak hanya diajarkan teknik memotong kayu, tetapi juga desain furniture modern dan manajemen bisnis kecil.
+                </p>
+
+                <blockquote class="border-l-4 border-yellow-400 pl-6 my-10 italic text-2xl font-poppins text-slate-700 bg-slate-50 py-6 pr-6 rounded-r-2xl">
+                    "Kami ingin mereka tidak hanya menjadi pekerja, tapi menjadi pemilik usaha yang bisa membuka lapangan kerja di distrik masing-masing."
+                </blockquote>
+
+                <p>
+                    Salah satu lulusan terbaik, Yohanes, menyatakan bahwa sebelum bergabung dengan YPTP, ia tidak memiliki keahlian khusus. Namun kini, ia sudah mampu membuat set kursi tamu minimalis yang memiliki nilai jual tinggi. "Saya berterima kasih kepada para instruktur yang sabar membimbing kami dari nol," ujarnya.
+                </p>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-6 font-poppins">Hasil Karya Pelatihan</h3>
+                <p>
+                    Para peserta telah menghasilkan berbagai produk berkualitas ekspor seperti meja kantor, lemari, dan hiasan dinding yang kini mulai dipasarkan di wilayah Timika dan sekitarnya.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" class="rounded-3xl shadow-lg h-64 w-full object-cover" alt="Workshop">
+                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" class="rounded-3xl shadow-lg h-64 w-full object-cover" alt="Furniture">
+                </div>
+
+                <p>
+                    YPTP berharap program ini terus berkelanjutan dengan dukungan dari berbagai pihak mitra strategis demi mewujudkan kemandirian generasi emas Papua.
+                </p>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex gap-2">
+                    <span class="bg-slate-100 text-slate-600 px-4 py-1 rounded-full text-[10px] font-bold">#PAPUA</span>
+                    <span class="bg-slate-100 text-slate-600 px-4 py-1 rounded-full text-[10px] font-bold">#TIMIKA</span>
+                    <span class="bg-slate-100 text-slate-600 px-4 py-1 rounded-full text-[10px] font-bold">#PRESTASI</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Bagikan Berita:</span>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-green-600 hover:bg-green-50 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-black hover:bg-slate-200 transition"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-24 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <span class="w-10 h-1 bg-yellow-400 rounded-full"></span> Berita Terkait Lainnya
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="#" class="group bg-white p-4 rounded-[2rem] flex gap-4 items-center shadow-sm hover:shadow-xl transition duration-500 border border-transparent hover:border-green-100">
+                    <div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=200" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="MoU">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm leading-tight group-hover:text-green-600 transition">YPTP Teken MoU dengan Industri Lokal di Mimika</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold uppercase">05 Jan 2026</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="group bg-white p-4 rounded-[2rem] flex gap-4 items-center shadow-sm hover:shadow-xl transition duration-500 border border-transparent hover:border-green-100">
+                    <div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=200" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="MoU">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm leading-tight group-hover:text-green-600 transition">Penerimaan Peserta Didik Baru Tahun Ajaran 2026</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold uppercase">28 Des 2025</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="font-poppins font-bold text-xl mb-4">YPTP Papua</h3>
+            <p class="text-slate-500 text-sm mb-8">Membangun talenta asli Papua demi kemandirian dan masa depan yang cerah di Bumi Cenderawasih.</p>
+            <div class="flex justify-center gap-6 text-slate-400 mb-8">
+                <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-[10px] text-slate-600 uppercase tracking-widest border-t border-white/5 pt-8">
+                © 2026 Yayasan Pengembangan Talenta Papua. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle Function
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            }
+        });
+
+        // Close on click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>

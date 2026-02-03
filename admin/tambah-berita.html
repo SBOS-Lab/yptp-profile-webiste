@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Berita - Admin YPTP Papua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f8fafc; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* STATE AKTIF HIJAU */
+        .sidebar-link.active { 
+            background-color: #16a34a !important; 
+            color: white !important;
+            box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.2);
+        }
+        .sidebar-link.active i { color: white !important; }
+        
+        .sidebar-link:not(.active):hover {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        
+        .submenu-container { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+        .submenu-container.show { max-height: 200px; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform -translate-x-full lg:translate-x-0 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-10 px-2">
+                <div class="w-8 h-8 bg-gradient-to-tr from-green-600 to-yellow-400 rounded-lg flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-hands-holding-child text-sm"></i>
+                </div>
+                <span class="font-poppins font-bold text-green-800 tracking-tight uppercase">YPTP Admin</span>
+            </div>
+
+            <nav class="space-y-1">
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl transition font-medium text-slate-500">
+                    <i class="fas fa-th-large w-5"></i> Dashboard
+                </a>
+
+                <div>
+                    <button onclick="toggleBerita(this)" class="sidebar-link active w-full flex items-center justify-between px-4 py-3 text-slate-500 rounded-xl transition font-medium group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-newspaper w-5"></i> Kelola Berita
+                        </div>
+                        <i class="fas fa-chevron-down text-[10px] transition-transform duration-300 rotate-180" id="berita-arrow"></i>
+                    </button>
+                    <div id="berita-submenu" class="submenu-container show flex flex-col ml-9 space-y-1 border-l-2 border-slate-100 pl-4 mt-1">
+                        <a href="lihat-berita.html" class="block py-2 text-sm text-slate-500 hover:text-green-600 transition pl-2">Lihat Berita</a>
+                        <a href="#" class="block py-2 text-sm text-slate-500 hover:text-green-600 transition pl-2">Kategori Berita</a>
+                    </div>
+                </div>
+
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 rounded-xl transition font-medium">
+                    <i class="fas fa-graduation-cap w-5"></i> Program
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="flex-1 lg:ml-64">
+        <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-10 py-5 flex justify-between items-center sticky top-0 z-40">
+            <div class="flex items-center gap-4">
+                <a href="lihat-berita.html" class="text-slate-400 hover:text-green-600 transition text-lg">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="font-poppins font-bold text-slate-800 text-xl">Buat Berita Baru</h2>
+            </div>
+            <img src="https://ui-avatars.com/api/?name=Admin&background=16a34a&color=fff" class="w-10 h-10 rounded-xl">
+        </header>
+
+        <div class="p-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="glass-card p-8 rounded-[2.5rem] shadow-sm bg-white">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Judul Berita</label>
+                                <input type="text" placeholder="Ketikkan judul berita yang menarik..." class="w-full mt-2 px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:border-green-500 focus:bg-white transition text-base font-semibold">
+                            </div>
+                            
+                            <div>
+                                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Konten Lengkap</label>
+                                <div class="mt-2 border border-slate-100 rounded-2xl overflow-hidden shadow-inner bg-white">
+                                    <div class="bg-slate-50 border-b border-slate-100 px-4 py-3 flex gap-6 text-slate-400">
+                                        <i class="fas fa-bold hover:text-green-600 cursor-pointer"></i>
+                                        <i class="fas fa-italic hover:text-green-600 cursor-pointer"></i>
+                                        <i class="fas fa-underline hover:text-green-600 cursor-pointer"></i>
+                                        <i class="fas fa-link hover:text-green-600 cursor-pointer"></i>
+                                        <i class="fas fa-image hover:text-green-600 cursor-pointer"></i>
+                                        <i class="fas fa-list hover:text-green-600 cursor-pointer"></i>
+                                    </div>
+                                    <textarea rows="15" placeholder="Tuliskan isi berita Anda di sini secara detail..." class="w-full px-6 py-5 outline-none focus:bg-white transition resize-none"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                  
+
+                    <div class="glass-card p-8 rounded-[2.5rem] shadow-sm bg-white">
+                        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Thumbnail Gambar</label>
+                        <div class="mt-4 border-2 border-dashed border-slate-200 rounded-3xl p-8 text-center hover:border-green-500 transition cursor-pointer bg-slate-50/50 group">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-image text-green-500 text-xl"></i>
+                            </div>
+                            <p class="text-xs font-bold text-slate-700">Pilih Gambar Utama</p>
+                            <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-tighter">Maksimal 2 MB</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-[2.5rem] shadow-sm bg-white">
+                        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Kategori Berita</label>
+                        <select class="w-full mt-3 px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:border-green-500 transition text-sm font-bold text-slate-600 appearance-none">
+                            <option>Kegiatan Yayasan</option>
+                            <option>Berita Pendidikan</option>
+                            <option>Update Pendaftaran</option>
+                        </select>
+                    </div>
+
+
+                      <div class="glass-card p-8 rounded-[2.5rem] shadow-sm bg-white">
+                        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Tindakan Publikasi</label>
+                        <div class="mt-4 flex flex-col gap-3">
+                            <button class="w-full bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition shadow-lg shadow-green-100 flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane text-xs"></i> Publish Sekarang
+                            </button>
+                            <button class="w-full bg-slate-100 text-slate-600 font-bold py-4 rounded-2xl hover:bg-slate-200 transition flex items-center justify-center gap-2">
+                                <i class="fas fa-file-alt text-xs"></i> Simpan ke Draft
+                            </button>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-slate-50">
+                            <div class="flex items-center justify-between text-[11px] font-bold text-slate-400">
+                                <span>Status Terakhir:</span>
+                                <span class="text-yellow-500 uppercase">Belum Disimpan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleBerita(btn) {
+            const submenu = document.getElementById('berita-submenu');
+            const arrow = document.getElementById('berita-arrow');
+            submenu.classList.toggle('show');
+            arrow.style.transform = submenu.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
+</body>
+</html>

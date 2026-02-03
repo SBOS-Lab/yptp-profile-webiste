@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihat Berita - Admin YPTP Papua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f8fafc; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* STATE AKTIF HIJAU */
+        .sidebar-link.active { 
+            background-color: #16a34a !important; 
+            color: white !important;
+            box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.2);
+        }
+        .sidebar-link.active i { color: white !important; }
+        
+        .sidebar-link:not(.active):hover {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        
+        .submenu-container { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+        .submenu-container.show { max-height: 200px; }
+        .submenu-item.active-sub { color: #16a34a; font-weight: 700; border-left: 2px solid #16a34a; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform -translate-x-full lg:translate-x-0 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-10 px-2">
+                <div class="w-8 h-8 bg-gradient-to-tr from-green-600 to-yellow-400 rounded-lg flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-hands-holding-child text-sm"></i>
+                </div>
+                <span class="font-poppins font-bold text-green-800 tracking-tight uppercase">YPTP Admin</span>
+            </div>
+
+            <nav class="space-y-1">
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl transition font-medium text-slate-500">
+                    <i class="fas fa-th-large w-5"></i> Dashboard
+                </a>
+
+                <div>
+                    <button onclick="toggleBerita(this)" class="sidebar-link active w-full flex items-center justify-between px-4 py-3 text-slate-500 rounded-xl transition font-medium group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-newspaper w-5"></i> Kelola Berita
+                        </div>
+                        <i class="fas fa-chevron-down text-[10px] transition-transform duration-300 rotate-180" id="berita-arrow"></i>
+                    </button>
+                    <div id="berita-submenu" class="submenu-container show flex flex-col ml-9 space-y-1 border-l-2 border-slate-100 pl-4 mt-1">
+                        <a href="#" class="submenu-item active-sub block py-2 text-sm text-slate-500 transition pl-2">Lihat Berita</a>
+                        <a href="#" class="submenu-item block py-2 text-sm text-slate-500 hover:text-green-600 transition pl-2">Kategori Berita</a>
+                    </div>
+                </div>
+
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 rounded-xl transition font-medium">
+                    <i class="fas fa-graduation-cap w-5"></i> Program
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="flex-1 lg:ml-64">
+        <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-8 py-5 flex justify-between items-center">
+            <h2 class="font-poppins font-bold text-slate-800 text-xl">Manajemen Berita</h2>
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Status: Superadmin</span>
+                <img src="https://ui-avatars.com/api/?name=Admin&background=16a34a&color=fff" class="w-10 h-10 rounded-xl">
+            </div>
+        </header>
+
+        <div class="p-10 space-y-8"> <div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100">
+                <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto items-center">
+                    <div class="relative w-full md:w-80">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" placeholder="Cari berita..." class="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 outline-none focus:border-green-500 transition text-sm">
+                    </div>
+                    <select class="bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl text-sm outline-none focus:border-green-500 text-slate-600 w-full md:w-48">
+                        <option>Semua Kategori</option>
+                        <option>Kegiatan</option>
+                        <option>Pendidikan</option>
+                    </select>
+                </div>
+                
+                <a href="tambah-berita.html" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-green-200">
+                    <i class="fas fa-plus"></i> Tambah Berita Baru
+                </a>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50/80 text-slate-400 text-[10px] uppercase tracking-[0.2em]">
+                            <tr>
+                                <th class="px-10 py-6">Informasi Konten</th> <th class="px-10 py-6">Kategori</th>
+                                <th class="px-10 py-6">Tanggal Rilis</th>
+                                <th class="px-10 py-6 text-center">Tindakan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            <tr class="hover:bg-green-50/30 transition group">
+                                <td class="px-10 py-7"> <div class="flex items-center gap-5">
+                                        <div class="w-20 h-14 bg-slate-200 rounded-xl overflow-hidden shrink-0 shadow-inner">
+                                            <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b553?w=200" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-slate-700 text-base line-clamp-1">Pelatihan Tukang Kayu Profesional di Sentani</p>
+                                            <p class="text-xs text-slate-400 mt-1"><i class="far fa-user mr-1"></i> Admin Utama</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <span class="px-4 py-1.5 bg-blue-100 text-blue-600 text-[10px] font-bold rounded-lg uppercase tracking-wider">Kegiatan</span>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <div class="text-sm text-slate-600 font-medium">03 Feb 2026</div>
+                                    <div class="text-[10px] text-slate-400">14:20 WIB</div>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <div class="flex justify-center gap-3">
+                                        <button title="Edit" class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition flex items-center justify-center shadow-sm">
+                                            <i class="fas fa-edit text-sm"></i>
+                                        </button>
+                                        <button title="Hapus" class="w-10 h-10 rounded-xl bg-red-50 text-red-600 hover:bg-red-600 hover:text-white transition flex items-center justify-center shadow-sm">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-green-50/30 transition group">
+                                <td class="px-10 py-7">
+                                    <div class="flex items-center gap-5">
+                                        <div class="w-20 h-14 bg-slate-200 rounded-xl overflow-hidden shrink-0 shadow-inner">
+                                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=200" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-slate-700 text-base line-clamp-1">Pembukaan Pendaftaran Batch 5 YPTP</p>
+                                            <p class="text-xs text-slate-400 mt-1"><i class="far fa-user mr-1"></i> Admin Utama</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <span class="px-4 py-1.5 bg-green-100 text-green-600 text-[10px] font-bold rounded-lg uppercase tracking-wider">Pendaftaran</span>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <div class="text-sm text-slate-600 font-medium">01 Feb 2026</div>
+                                    <div class="text-[10px] text-slate-400">09:00 WIB</div>
+                                </td>
+                                <td class="px-10 py-7">
+                                    <div class="flex justify-center gap-3">
+                                        <button title="Edit" class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition flex items-center justify-center shadow-sm">
+                                            <i class="fas fa-edit text-sm"></i>
+                                        </button>
+                                        <button title="Hapus" class="w-10 h-10 rounded-xl bg-red-50 text-red-600 hover:bg-red-600 hover:text-white transition flex items-center justify-center shadow-sm">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="px-10 py-6 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Page 1 of 5</p>
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-400 hover:bg-white transition"><i class="fas fa-chevron-left text-xs"></i></button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-green-600 text-white font-bold shadow-md shadow-green-100">1</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-400 hover:bg-white transition">2</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-400 hover:bg-white transition"><i class="fas fa-chevron-right text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleBerita(btn) {
+            const submenu = document.getElementById('berita-submenu');
+            const arrow = document.getElementById('berita-arrow');
+            submenu.classList.toggle('show');
+            arrow.style.transform = submenu.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
+</body>
+</html>
